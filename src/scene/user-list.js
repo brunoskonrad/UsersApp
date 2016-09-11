@@ -24,12 +24,13 @@ class UserListScene extends Component {
     this.fetchUsers()
   }
 
-  fetchUsers() {
-    fetch('http://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((users) => this.setState({
-        users: ds.cloneWithRows(users)
-      }))
+  async fetchUsers() {
+    jsonResponse = await fetch('http://jsonplaceholder.typicode.com/users')
+    users = await jsonResponse.json()
+
+    this.setState({
+      users: ds.cloneWithRows(users)
+    })
   }
 
   onUserClick = (user) => {
