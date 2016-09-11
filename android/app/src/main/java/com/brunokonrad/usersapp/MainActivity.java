@@ -1,4 +1,4 @@
-package com.usersapp;
+package com.brunokonrad.usersapp;
 
 import com.facebook.react.ReactActivity;
 
