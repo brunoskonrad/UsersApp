@@ -6,8 +6,8 @@ import {
   TouchableHighlight,
 } from 'react-native'
 
-import UserName from './user-name'
-import UserCompany from './user-company'
+import UserName from './name'
+import UserCompany from './company'
 
 const User = ({user, onClick}) => {
   const { name, username, company } = user
