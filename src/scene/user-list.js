@@ -44,7 +44,11 @@ class UserListScene extends Component {
   }
 
   onUserClick = (user) => {
-    console.log(user)
+    this.props.navigator.push({
+      title: user.name,
+      index: 'detail',
+      user: user,
+    })
   }
 
   renderRow = (user) => {

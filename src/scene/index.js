@@ -8,7 +8,9 @@
  */
 
 import UserListScene from './user-list'
+import UserDetailScene from './user-detail'
 
 export {
-  UserListScene
+  UserListScene,
+  UserDetailScene,
 }
