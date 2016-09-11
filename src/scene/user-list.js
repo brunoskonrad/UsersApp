@@ -6,6 +6,10 @@ import {
 } from 'react-native'
 
 import User from '../components/user'
+import {
+  fetchUser,
+  getUsers
+} from '../store/user'
 
 const ds = new ListView.DataSource({
   rowHasChanged: (r1, r2) => r1 !== r2
@@ -20,13 +24,19 @@ class UserListScene extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const value = await getUsers()
+    if (value) {
+      this.setState({
+        users: ds.cloneWithRows(value)
+      })
+    }
+
     this.fetchUsers()
   }
 
   async fetchUsers() {
-    jsonResponse = await fetch('http://jsonplaceholder.typicode.com/users')
-    users = await jsonResponse.json()
+    users = await fetchUser()
 
     this.setState({
       users: ds.cloneWithRows(users)
