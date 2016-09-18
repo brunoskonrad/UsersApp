@@ -19,7 +19,7 @@ class AppNavigator extends Component {
   }
 
   handleBack = () => {
-    const {navigator} = this.refs
+    const { navigator } = this.refs
     if (navigator && navigator.getCurrentRoutes().length > 1) {
       navigator.pop()
       return true
