@@ -33,6 +33,7 @@ class AppNavigator extends Component {
   }
 
   userListForward = (user) => {
+    // Opens user detail scene
     this.refs.navigator.push({
       title: user.name,
       index: 'detail',
